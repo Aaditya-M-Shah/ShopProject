@@ -1,0 +1,31 @@
+{% extends 'mobile/common.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}User Registration{% endblock %}
+
+{% block content %}
+
+<div style="border-bottom: 400px; margin-top: 10px; margin-left: 350px; margin-right: 350px; border: 2px solid black; border-radius: 10px; background-color: #2ddbeb">
+    <form method= "POST">
+        {% csrf_token %}
+        
+        <fieldset class="form-group" style= "margin: 10px;">
+            <legend class= "border-bottom mb-4"> Join us </legend>
+            
+            {{form | crispy}}
+        </fieldset>
+        
+        <div class="form-group" style= "margin: 10px;">
+            <button type= "submit" class= "btn btn-primary"> Register </button>
+        </div>
+    </form>
+    
+    <div class= "border-top pt-3" style="margin: 10px;">
+        <small class= "text-muted">
+            Already have an account? <a href= "{% url 'login' %}">Login</a>
+        </small>
+    </div>
+</div>
+
+{% endblock %}

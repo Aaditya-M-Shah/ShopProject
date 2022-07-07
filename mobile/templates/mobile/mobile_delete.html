@@ -1,0 +1,29 @@
+{% extends 'mobile/common.html' %}
+
+{% block title %} Delete Mobile {% endblock %}
+
+{% block content %}
+
+<div style="border-bottom: 400px; margin-top: 10px; margin-left: 350px; margin-right: 350px; border: 2px solid black; border-radius: 10px; background-color: #2ddbeb">
+    <div>
+        <form method="POST">
+        
+            {% csrf_token %}
+            <fieldset class="form-group" style="margin: 10px;">
+                <legend class="border bottom mb-4"> Deleting Mobile: {{mobile.name}} </legend>
+                
+                <h5> Are you sure you would like to delete this mobile? </h5>
+                
+            <fieldset>
+        
+            <button type="submit" class="btn btn-danger"> Yes </button>
+        
+        </form>
+    </div>
+    
+    <div class= "border-top pt-3" style="margin: 10px;">
+        <a href="{% url 'home' %}"> No, I would like to go back to the home page</a>
+    </div>
+</div>
+
+{% endblock %}

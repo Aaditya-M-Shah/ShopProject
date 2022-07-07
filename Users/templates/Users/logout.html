@@ -1,0 +1,15 @@
+{% extends 'mobile/common.html' %}
+
+{% block title %} User Logout {% endblock %}
+
+{% block content %}
+
+<div style="border-bottom: 400px; margin-top: 10px; margin-left: 300px; margin-right: 300px; border: 2px solid black; border-radius: 10px; background-color: #2ddbeb">
+    <div style="margin: 10px;">
+        <h3>You've been successfully logged out</h3>
+        
+        <p> What would you like to do? <a href="{% url 'login' %}">Login</a> OR <a href="{% url 'register' %}">Register</a> </p>
+    </div>
+</div>
+
+{% endblock %}

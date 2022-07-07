@@ -1,0 +1,26 @@
+{% extends 'mobile/common.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block title %} Edit Mobile {% endblock %}
+
+{% block content %}
+
+<div style="border-bottom: 400px; margin-top: 10px; margin-left: 350px; margin-right: 350px; border: 2px solid black; border-radius: 10px; background-color: #2ddbeb">
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        <fieldset class="form-group" style="margin: 10px;">
+            <legend class="border bottom mb-4"> Edit a Mobile </legend>
+        
+            {{form | crispy}}
+        <fieldset>
+
+        <div class= "border-top pt-3" style="margin-top: 10px;">
+            <button type="submit" class="btn btn-primary"> Submit </button>
+        </div>
+    
+    </form>
+</div>
+
+{% endblock %}

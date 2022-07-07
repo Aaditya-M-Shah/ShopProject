@@ -1,0 +1,25 @@
+{% extends 'mobile/common.html' %}
+
+{% block title %} Mobile Details {% endblock %}
+
+{% block content %}
+
+<div class="card" style="border: solid 1px; margin-left: 500px; margin-right: 350px; width: 18rem; margin-bottom: 10px; margin-top:10px; background-color: #2ddbeb;">
+    <div class="card-body">
+        <img src="{{mobile.image.url}}" class="card-img-top" alt="..."> 
+        <legend class="border bottom mb-4"> {{mobile.name}} </legend>
+        <p>
+            Price: ${{mobile.price}}
+            <br>
+            Camera Description: {{mobile.cam_des}}
+            <br>
+            RAM Description: {{mobile.RAM_des}}
+        </p>
+        
+        {% if user.is_authenticated and user.is_superuser %}
+            <a href="{%url 'edit' mobile.pk%}" style="text-decoration: none"> Edit </a>&nbsp;<a href="{%url 'delete' mobile.pk%}" style="text-decoration: none !important; color: red"> Delete </a>
+        {% endif %}    
+    </div>
+</div>
+
+{% endblock %}

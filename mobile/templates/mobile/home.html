@@ -1,0 +1,23 @@
+{% extends 'mobile/common.html' %}
+
+{% block title %} Mobiles {% endblock %}
+
+{% block content %}
+        <div class="container">
+            
+            <div class="row">
+                {% for mobile in mobiles %}
+                <div class="col">
+                      <div class="card" style="width: 18rem;margin-bottom: 10px; margin-top: 10px; background-color: #2ddbeb;">
+                        <img src="{{mobile.image.url}}" class="card-img-top" alt="..." style="width: 100px; height: 100px;">
+                        <div class="card-body">
+                          <h5 class="card-title">{{mobile.name}}</h5>
+                          <p class="card-text"> ${{mobile.price}} </p>
+                          <a href="{% url 'detail' mobile.pk %}" class="btn btn-primary">Description</a>
+                        </div>
+                      </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div> 
+{% endblock %}
